@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Heart_Disease_Prediction</title>
+      
+    <style>
+          /* CSS code for button */
+        body {
+        background-image: url('static/images/image.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        }
+      
+          /* CSS code for button */
+        .button_css {
+        color: #c22424 !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        background: #ffffff;
+        padding: 20px;
+        border: 4px solid hsl(0, 79%, 54%) !important;
+        display: inline-block;
+        transition: all 0.4s ease 0s;
+        }
+          
+        .button_css:hover {
+        color: #ffffff !important;
+        background: #eb2c2c;
+        border-color: #db2932 !important;
+        transition: all 0.4s ease 0s;
+        }
+
+        h1{
+            color:rgb(31, 6, 5) !important; 
+            text-align: center;
+            font-style: oblique;
+            font-size: 300%;
+            font-weight: 1000;
+        }
+
+        I{color: #180202 !important;
+            font-size: 90%;
+            
+        }
+    </style>
+      
+</head> 
+
+<body bgcolor="#d4a3ae">
+<div class="login"> 
+    
+        <br>   
+                 
+
+            
+        
+        
+        
+    <form action="{{url_for('predict')}}" method="post">
+        <h1><u> Heart Disease Prediction </u></h1><br>
+        Age :<br> <input type="text" name="age" placeholder="age" required="required" /> <I> Age in Years</I> <br><br>             
+       Resting blood pressure :<br> <input type="text" name="resting_blood_pressure" placeholder="resting_blood_pressure" required="required" /> <I>  Ranges from 94 to 200 in mmHg</I><br><br> 
+        Cholesterol:<br> <input type="text" name="cholesterol" placeholder="cholesterol" required="required" /> <I>Serum cholesterol range from 126 to 564 in mg/dl</I><br><br>
+        Max heart rate  :<br> <input type="text" name="max_heart_rate" placeholder="max_heart_rate" required="required" /><I>Max heart rate achieved from 71 to 202</I><br><br>
+        St Depression :<br> <input type="text" name="st_depression" placeholder="st_depression" required="required" /> <I>St depression induced by exercise relative to rest from 0.0 to 62.0</I><br><br>
+        No. of major vessels :<br> <input type="text" name="no_of_major_vessels" placeholder="no_of_major_vessels" required="required" /> <I>Fill the values from 0 to 3</I><br><br>
+        Sex :<br> <input type="text" name="sex_male" placeholder="sex_male" required="required" /> <I>For male = 1, and female = 0 </I><br><br>
+        Chest pain Asymptomatic :<br> <input type="text" name="chest_pain_type_asymptomatic" placeholder="chest_pain_type_asymptomatic" required="required" /> <I>For True = 1 & False = 0</I><br><br>
+        Chest pain Atypical angina :<br> <input type="text" name="chest_pain_type_atypical angina" placeholder="chest_pain_type_atypical angina" required="required" /> <I>For True = 1 & False = 0</I><br><br>
+        Chest pain typical angina :<br> <input type="text" name="chest_pain_type_typical angina" placeholder="chest_pain_type_typical angina" required="required" /> <I>For True = 1 & False = 0</I><br><br>
+        Thal fixed defect :<br> <input type="text" name="thal_fixed defect" placeholder="thal_fixed defect" required="required" /> <I>For True = 1 & False = 0</I><br><br>
+        Thal normal :<br> <input type="text" name="thal_normal" placeholder="thal_normal" required="required" /> <I>For True = 1 & False = 0</I><br><br>
+        Thal reversible defect :<br> <input type="text" name="thal_reversable_defect" placeholder="thal_reversable_defect" required="required" /> <I>For True = 1 & False = 0</I><br><br>
+        
+
+        
+        
+        
+                    <!-- Show button -->
+        <div class="button_cont" align="center"><a class="button_css" href="#"_blank" rel="nofollow noopener">
+            <button type="submit"  class="btn btn-primary btn-block btn-large " style="color: #cc350f;"><strong>Predict heart disease</strong></button></a> 
+        </div>    
+        
+        
+        
+    </form>
+    
+
+        <!-- Show predicted output using ML Model-->
+    <div>
+        <center>
+            <h1>{{ prediction_text }}</h1>
+        </center>
+    </div>
+
+        
+</body>
+</html>
